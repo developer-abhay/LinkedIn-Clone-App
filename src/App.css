@@ -4,4 +4,7 @@
 
 .app-body {
   display: flex;
+  margin: 30px 20px;
+  margin-bottom: 0px;
+  max-width: 1200px;
 }

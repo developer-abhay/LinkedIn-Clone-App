@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import "./Post.css";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Avatar } from "@mui/material";
@@ -8,11 +8,11 @@ import SendIcon from "@mui/icons-material/Send";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import InputOption from "./InputOption";
 
-function Post({ name, description, message, photoUrl }) {
+const Post = forwardRef(({ name, description, message, photoUrl }, ref) => {
   return (
-    <div className="post">
+    <div ref={ref} className="post">
       <div className="post-header">
-        <Avatar src={photoUrl} />
+        <Avatar src={photoUrl}> {name[0]} </Avatar>
         <div className="post-info">
           <h2>{name}</h2>
           <p>{description}</p>
@@ -31,6 +31,6 @@ function Post({ name, description, message, photoUrl }) {
       </div>
     </div>
   );
-}
+});
 
 export default Post;

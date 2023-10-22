@@ -8,9 +8,17 @@ import TextsmsIcon from "@mui/icons-material/Textsms";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import "./Header.css";
 import HeaderOption from "../HeaderOptions/HeaderOption";
-import avatar from "../../assets/avatar.jpeg";
+import { useDispatch } from "react-redux";
+import { auth } from "../../firebase";
+import { logout } from "../../features/userSlice";
 
 function Header() {
+  const dispatch = useDispatch();
+  const logoutApp = () => {
+    dispatch(logout());
+    auth.signOut();
+  };
+
   return (
     <div className="header">
       <div className="header-left">
@@ -28,7 +36,7 @@ function Header() {
         <HeaderOption Icon={TextsmsIcon} title="Messages" />
         <HeaderOption Icon={NotificationsIcon} title="Notifications" />
 
-        <HeaderOption avatar={avatar} title="Me" />
+        <HeaderOption onClick={logoutApp} avatar={1} title="Me" />
       </div>
     </div>
   );
