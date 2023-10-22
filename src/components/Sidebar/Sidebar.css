@@ -1,9 +1,8 @@
 .sidebar {
-  position: sticky;
-  top: 80px;
   flex: 0.2;
   height: fit-content;
-  padding: 20px;
+  position: sticky;
+  top: 80px;
 }
 
 .sidebar-top {
@@ -14,8 +13,7 @@
   border: 1px solid lightgray;
   background-color: white;
   overflow: hidden;
-  width: fit-content;
-  width: 220px;
+  min-width: 200px;
 }
 
 .sidebar-top > img {
